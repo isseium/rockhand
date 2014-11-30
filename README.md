@@ -13,14 +13,14 @@ For example,
 And more...
 
 This project is trial project. 
-We aim to merge ang contribute for titanium official project in the future.
+We aim to merge and contribute for titanium official project in the future.
 
 # How to use
 
 ## Icon Generator
 Coming soon...
 
-## Icon Generator
+## Splash Generator
 Coming soon...
 
 # Contributing
