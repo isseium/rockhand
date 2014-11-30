@@ -13,15 +13,30 @@ For example,
 And more...
 
 This project is trial project. 
-We aim to merge ang contribute for titanium official project in the future.
+We aim to merge and contribute for titanium official project in the future.
 
 # How to use
 
 ## Icon Generator
-Coming soon...
+```
+$ ./rockhand icon images/appicon-1024.png ~/repos/TiSample
+generating...  width=120        height=120      filename=/Users/issei/repos/TiSample/app/assets/iphone/appicon-60@2x.png
+generating...  width=76         height=76       filename=/Users/issei/repos/TiSample/app/assets/iphone/appicon-76.png
+generating...  width=152        height=152      filename=/Users/issei/repos/TiSample/app/assets/iphone/appicon-76@2x.png
+:
+:
+```
 
-## Icon Generator
-Coming soon...
+## Splash Generator
+
+```
+$ ./rockhand splash images/default.png ~/repos/TiSample
+generating...  width=320        height=480      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default.png      depth=72
+generating...  width=640        height=960      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default@2x.png   depth=72
+generating...  width=640        height=960      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default@2x.png   depth=72
+:
+:
+```
 
 # Contributing
 This project is open source project.

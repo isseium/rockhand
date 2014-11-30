@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function rh_help() {
+  echo "Usage: rockhand [-h] [--help] <command> [<args>]"
+  exit 1
+}
+
+subcommand_path=./commands
+
+command="$1"
+case "$command" in
+    "icon"|"splash" )
+        shift
+        $subcommand_path/$command/main.sh "$@"
+        ;;
+    * )
+        rh_help
+        ;;
+esac
