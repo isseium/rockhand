@@ -30,7 +30,7 @@ generating...  width=152        height=152      filename=/Users/issei/repos/TiSa
 ## Splash Generator
 
 ```
-$ ./rockhand splash images/default.png ~/repos/TiSample
+./rockhand splash -b "#00FF00" images/default.png ~/repos/TiSample
 generating...  width=320        height=480      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default.png      depth=72
 generating...  width=640        height=960      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default@2x.png   depth=72
 generating...  width=640        height=960      filename=/Users/issei/repos/TiSample/app/assets/iphone/Default@2x.png   depth=72

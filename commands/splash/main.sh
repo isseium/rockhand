@@ -9,25 +9,14 @@ function usage()  {
   exit 1
 }
 
-if [ -z "$1" ] || [ ! -f $1 ]; then
-    echo "Invalid args: $1"
-    usage
-fi
-if [ -z $2 ] || [ ! -d $2 ]; then
-    echo "Invalid args: $2"
-    usage
-fi
-
 # 設定値
-base_image=$1               # 1024x1024 推奨
-titanium_home=$2            # Titanium Home
 background_color="#ffb570"  # 背景色
 
 # Args
 while getopts b:h OPT
 do
     case $OPT in
-        b)  background_color=$OPT
+        b)  background_color=$OPTARG
             ;;
         h)  usage_exit
             ;;
@@ -37,6 +26,17 @@ do
 done
 shift $((OPTIND - 1))
 
+if [ -z "$1" ] || [ ! -f $1 ]; then
+    echo "Invalid args: $1"
+    usage
+fi
+if [ -z $2 ] || [ ! -d $2 ]; then
+    echo "Invalid args: $2"
+    usage
+fi
+
+base_image=$1               # 1024x1024 推奨
+titanium_home=$2            # Titanium Home
 
 # 画像合成関数
 # usage: generate_splash <width> <height> <filename> <depth> 
