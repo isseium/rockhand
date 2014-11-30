@@ -33,32 +33,43 @@ do
 done
 shift $((OPTIND - 1))
 
+# usage: convert_icon <width> <height> <filename>
+function convert_icon(){
+    width=$1
+    height=$2
+    base=$3
+    filename=$4
+    
+    echo "generating...  width=$1 	height=$2	filename=$4" 
+    
+    convert -resize ${width}x${height} $base $filename 2> /dev/null
+}
 
 # iOS 対応
-convert -resize 120x120 $base_image $titanium_home/app/assets/iphone/appicon-60@2x.png
-convert -resize 76x76   $base_image $titanium_home/app/assets/iphone/appicon-76.png
-convert -resize 152x152 $base_image $titanium_home/app/assets/iphone/appicon-76@2x.png
-convert -resize 57x57   $base_image $titanium_home/app/assets/iphone/appicon.png
-convert -resize 114x114 $base_image $titanium_home/app/assets/iphone/appicon@2x.png
-convert -resize 72x72   $base_image $titanium_home/app/assets/iphone/appicon-72.png
-convert -resize 144x144 $base_image $titanium_home/app/assets/iphone/appicon-72@2x.png
-convert -resize 40x40   $base_image $titanium_home/app/assets/iphone/appicon-Small-40.png
-convert -resize 80x80   $base_image $titanium_home/app/assets/iphone/appicon-Small-40@2x.png
-convert -resize 29x29   $base_image $titanium_home/app/assets/iphone/appicon-Small.png
-convert -resize 58x58   $base_image $titanium_home/app/assets/iphone/appicon-Small@2x.png
-convert -resize 50x50   $base_image $titanium_home/app/assets/iphone/appicon-Small-50.png
-convert -resize 100x100 $base_image $titanium_home/app/assets/iphone/appicon-Small-50@2x.png
-convert -resize 58x58   $base_image $titanium_home/app/assets/iphone/appicon-Small@2x.png
-convert -resize 512x512 $base_image $titanium_home/app/assets/iphone/iTunesArtwork
+convert_icon 120 120 $base_image $titanium_home/app/assets/iphone/appicon-60@2x.png
+convert_icon  76  76 $base_image $titanium_home/app/assets/iphone/appicon-76.png
+convert_icon 152 152 $base_image $titanium_home/app/assets/iphone/appicon-76@2x.png
+convert_icon  57  57 $base_image $titanium_home/app/assets/iphone/appicon.png
+convert_icon 114 114 $base_image $titanium_home/app/assets/iphone/appicon@2x.png
+convert_icon  72  72 $base_image $titanium_home/app/assets/iphone/appicon-72.png
+convert_icon 144 144 $base_image $titanium_home/app/assets/iphone/appicon-72@2x.png
+convert_icon  40  40 $base_image $titanium_home/app/assets/iphone/appicon-Small-40.png
+convert_icon  80  80 $base_image $titanium_home/app/assets/iphone/appicon-Small-40@2x.png
+convert_icon  29  29 $base_image $titanium_home/app/assets/iphone/appicon-Small.png
+convert_icon  58  58 $base_image $titanium_home/app/assets/iphone/appicon-Small@2x.png
+convert_icon  50  50 $base_image $titanium_home/app/assets/iphone/appicon-Small-50.png
+convert_icon 100 100 $base_image $titanium_home/app/assets/iphone/appicon-Small-50@2x.png
+convert_icon  58  58 $base_image $titanium_home/app/assets/iphone/appicon-Small@2x.png
+convert_icon 512 512 $base_image $titanium_home/app/assets/iphone/iTunesArtwork
 
 # Android 対応
-convert -resize 512x512 $base_image $titanium_home/app/assets/android/MarketplaceArtwork.png
-convert -resize 128x128 $base_image $titanium_home/app/assets/android/appicon.png
+convert_icon 512 512 $base_image $titanium_home/app/assets/android/MarketplaceArtwork.png
+convert_icon 128 128 $base_image $titanium_home/app/assets/android/appicon.png
 
 mkdir -p ${titanium_home}/platform/android/res/drawable-ldpi/ ${titanium_home}/platform/android/res/drawable-mdpi/ ${titanium_home}/platform/android/res/drawable-hdpi/ ${titanium_home}/platform/android/res/drawable-xhdpi/ ${titanium_home}/platform/android/res/drawable-xxhdpi 
 
-convert -resize 36x36   $base_image ${titanium_home}/platform/android/res/drawable-ldpi/appicon.png
-convert -resize 48x48   $base_image ${titanium_home}/platform/android/res/drawable-mdpi/appicon.png
-convert -resize 72x72   $base_image ${titanium_home}/platform/android/res/drawable-hdpi/appicon.png
-convert -resize 96x96   $base_image ${titanium_home}/platform/android/res/drawable-xhdpi/appicon.png
-convert -resize 144x144 $base_image ${titanium_home}/platform/android/res/drawable-xxhdpi/appicon.png
+convert_icon  36  36 $base_image ${titanium_home}/platform/android/res/drawable-ldpi/appicon.png
+convert_icon  48  48 $base_image ${titanium_home}/platform/android/res/drawable-mdpi/appicon.png
+convert_icon  72  72 $base_image ${titanium_home}/platform/android/res/drawable-hdpi/appicon.png
+convert_icon  96  96 $base_image ${titanium_home}/platform/android/res/drawable-xhdpi/appicon.png
+convert_icon 144 144 $base_image ${titanium_home}/platform/android/res/drawable-xxhdpi/appicon.png
