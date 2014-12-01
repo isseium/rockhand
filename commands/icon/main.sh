@@ -60,8 +60,8 @@ convert_icon  58  58 $base_image $titanium_home/app/assets/iphone/appicon-Small@
 convert_icon  50  50 $base_image $titanium_home/app/assets/iphone/appicon-Small-50.png
 convert_icon 100 100 $base_image $titanium_home/app/assets/iphone/appicon-Small-50@2x.png
 convert_icon  58  58 $base_image $titanium_home/app/assets/iphone/appicon-Small@2x.png
-convert_icon 512 512 $base_image $titanium_home/app/assets/iphone/iTunesArtwork                 # old
-convert_icon 512 512 $base_image $titanium_home/iTunesArtwork.png
+convert_icon 512 512 $base_image $titanium_home/app/assets/iphone/iTunesArtwork
+convert_icon 512 512 $base_image $titanium_home/iTunesConnect.png
 
 # Android 対応
 convert_icon 512 512 $base_image $titanium_home/app/assets/android/MarketplaceArtwork.png       # old
